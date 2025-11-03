@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from '../Component/Navbar'
-import Header from '../Component/Header'
+import Login from './Login'
 
 const Home = () => {
   return (
     <div>
-      <Navbar></Navbar>
-      <Header></Header>
+      This is home page
+      
+      <Login></Login>
     </div>
   )
 }
