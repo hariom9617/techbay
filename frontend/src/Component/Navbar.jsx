@@ -3,16 +3,16 @@ import { NavLink } from "react-router-dom";
 import YoutubeSearchedForIcon from "@mui/icons-material/YoutubeSearchedFor";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+   const Navigate=useNavigate();
   return (
     <>
-      {/* Navbar */}
-      <nav className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4 bg-white shadow-md relative">
-        {/* Logo */}
+      <nav className="flex justify-between items-center px-4 sm:px-6 lg:px-10 py-4 bg-white shadow-md relative">
         <div className="flex items-center gap-2 text-2xl font-bold text-gray-800">
           <svg
             fill="none"
@@ -28,8 +28,7 @@ const Navbar = () => {
           Techbay
         </div>
 
-        {/* Search Bar (hidden on very small screens) */}
-        <div className="hidden sm:flex items-center border border-gray-300 rounded-full px-4 py-2 w-60 md:w-80 shadow-sm">
+        <div className="hidden sm:flex items-center border bg-gray-100 border-gray-300 rounded-xl px-2 py-1 w-60 md:w-80 shadow-sm">
           <YoutubeSearchedForIcon className="text-gray-500 mr-2" />
           <input
             type="text"
@@ -38,7 +37,6 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-6 text-gray-700 font-medium">
           {["Home", "Products", "Wishlist", "Cart"].map((item) => (
             <NavLink
@@ -53,12 +51,10 @@ const Navbar = () => {
               {item}
             </NavLink>
           ))}
-          <Button variant="contained" color="primary">
-            Sign In
-          </Button>
+       <button className="px-5 py-1  text-center bg-blue-500 text-white rounded-2xl hover:underline cursor-pointer " 
+       onClick={()=>Navigate('/login')}>Sign In</button>
         </div>
 
-        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -69,13 +65,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Sidebar for Mobile */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
-        {/* Close Button */}
         <div className="flex justify-between items-center px-4 py-4 border-b">
           <div className="text-xl font-bold text-gray-800">Techbay</div>
           <button onClick={() => setIsOpen(false)} className="text-gray-600">
@@ -83,7 +77,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Sidebar Links */}
         <div className="flex flex-col gap-4 mt-6 px-6 text-gray-700 font-medium">
           {["Home", "Products", "Wishlist", "Cart"].map((item) => (
             <NavLink
@@ -100,9 +93,8 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <Button variant="contained" color="primary" className="mt-4">
-            Sign In
-          </Button>
+         <button className="px-10 py-2  bg-blue-500 " > Sign In</button>
+
         </div>
       </div>
 

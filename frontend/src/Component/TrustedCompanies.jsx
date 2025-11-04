@@ -9,7 +9,7 @@ const TrustedCompanies = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-10">
+    <section className="py-10">
       <div className="max-w-6xl mx-auto text-center px-4">
         <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6">
           Trusted By 1000+ Companies

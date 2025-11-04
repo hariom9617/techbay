@@ -2,8 +2,11 @@ import React from "react";
 import FeaturedProducts from "./FeaturedProducts";
 import Category from "./Category";
 import TrustedCompanies from "./TrustedCompanies";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+const Navigate =useNavigate();
+
   return (
 <>
     <div
@@ -28,7 +31,8 @@ const Header = () => {
 
       <button className="mt-6 flex items-center justify-center h-10 sm:h-12 px-6 rounded-lg 
                          bg-blue-600 text-white text-sm sm:text-base font-semibold 
-                         hover:bg-blue-700 transition-colors">
+                         hover:bg-blue-700 transition-colors"
+                         onClick={()=>Navigate('/products')}>
         Shop Now
       </button>
     </div>
