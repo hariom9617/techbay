@@ -1,14 +1,20 @@
 import React from 'react'
-import Login from './Login'
+import Navbar from '../Component/Navbar'
+import Header from '../Component/Header'
+import Footer from '../Component/Footer'
 
 const Home = () => {
   return (
-    <div>
-      This is home page
-      
-      <Login></Login>
-    </div>
+ <div className="min-h-screen bg-white">
+  <Navbar />
+
+  <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 xl:mx-32">
+    <Header />
+    <Footer />
+  </div>
+</div>
+
   )
 }
 
-export default Home
+export default Home;
